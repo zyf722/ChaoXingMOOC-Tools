@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         超星慕课 Tools
+// @namespace https://www.maxalex.tk
 // @version      0.1
 // @description  超星慕课的辅助播放工具，目前仅有不锁定
 // @author       MaxAlex, aka zyf722
