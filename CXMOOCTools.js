@@ -1,13 +1,20 @@
 // ==UserScript==
 // @name         超星慕课 Tools
-// @namespace https://www.maxalex.tk
+// @namespace    https://www.maxalex.tk
 // @version      0.1
 // @description  超星慕课的辅助播放工具，目前仅有不锁定
 // @author       MaxAlex, aka zyf722
 // @match        *://*/mycourse/studentstudy?*
-// @grant unsafeWindow
-// @license      WTFPL
+// @grant        unsafeWindow
+// @license      MIT
 // ==/UserScript==
+
+// Configuration Begin
+
+var trytime = 1000; // 检测页面变化时间间隔（ms）
+var waittime = 1500; // 等待页面加载完成的时间（ms）
+
+// Configuration End
 
 function getPlayer(){
     var doc = document;
@@ -24,7 +31,6 @@ function (){
 
 var doc = document;
 var player = doc.querySelector('object');
-var tryTime = 10;
 var title = doc.getElementById("mainid").getElementsByTagName("h1")[0].innerHTML;
 var oldtitle;
 var id;
@@ -36,6 +42,6 @@ setInterval(function () {
         oldtitle = title;
     }
     player.playMovie()
-},1000);
+},trytime);
 
-},1500)
+},waittime)
